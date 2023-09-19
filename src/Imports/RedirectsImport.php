@@ -20,17 +20,13 @@ class RedirectsImport implements ToCollection, WithBatchInserts, WithHeadingRow
 
     public function collection(Collection $rows)
     {
-        $created = null;
-        $updated = null;
-        $offlineCount = null;
-
-        $rows->each(function ($row) use (&$created, &$updated, &$offlineCount) {
+        $rows->each(function ($row) {
             if ($row->has('from') && ($row['from'] !== null)) {
                 $from = $this->removeTrailingSlashes($row['from']);
                 $to = $this->removeTrailingSlashes($row['to']);
 
                 if ($from && $from !== $to) {
-                    $urlMap = Redirect::updateOrCreate(
+                    Redirect::updateOrCreate(
                         [
                             'from' => $from,
                         ],
@@ -40,8 +36,6 @@ class RedirectsImport implements ToCollection, WithBatchInserts, WithHeadingRow
                             'online' => 1,
                         ]
                     );
-                    $urlMap->wasRecentlyCreated ? $created++ : $created;
-                    $urlMap->wasChanged() ? $updated++ : $updated;
                 }
             }
         });

@@ -7,17 +7,17 @@ use Illuminate\Support\Facades\Cache;
 
 class RedirectObserver
 {
-    public function created(Redirect $domain)
+    public function created(Redirect $redirect)
     {
         Cache::forget('redirects');
     }
 
-    public function updated(Redirect $domain)
+    public function updated(Redirect $redirect)
     {
         Cache::forget('redirects');
     }
 
-    public function deleted(Redirect $domain)
+    public function deleted(Redirect $redirect)
     {
         Cache::forget('redirects');
     }

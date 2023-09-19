@@ -1,6 +1,6 @@
 <?php
 
-namespace Codedor\FilamentUrlMapper\Database\Factories;
+namespace Codedor\FilamentRedirects\Database\Factories;
 
 use Codedor\FilamentRedirects\Models\Redirect;
 use Illuminate\Database\Eloquent\Factories\Factory;

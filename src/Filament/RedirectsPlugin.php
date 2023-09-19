@@ -49,16 +49,4 @@ class RedirectsPlugin implements Plugin
         // is retrieved from the plugin property.
         return $this->hasRedirectResource;
     }
-
-    public function menuBuilderPage(bool $condition = true): static
-    {
-        $this->hasMenuBuilderPage = $condition;
-
-        return $this;
-    }
-
-    public function hasMenuBuilderPage(): bool
-    {
-        return $this->hasMenuBuilderPage;
-    }
 }

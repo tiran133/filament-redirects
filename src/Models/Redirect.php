@@ -2,6 +2,7 @@
 
 namespace Codedor\FilamentRedirects\Models;
 
+use Codedor\FilamentRedirects\Database\Factories\RedirectFactory;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -9,6 +10,14 @@ use Illuminate\Support\Str;
 use Spatie\EloquentSortable\Sortable;
 use Spatie\EloquentSortable\SortableTrait;
 
+/**
+ * @property string $from
+ * @property string $to
+ * @property int $sort_order
+ * @property int $status
+ * @property bool $online
+ * @property bool $pass_query_string
+ */
 class Redirect extends Model implements Sortable
 {
     use HasFactory;
@@ -53,6 +62,6 @@ class Redirect extends Model implements Sortable
      */
     protected static function newFactory()
     {
-        return new UrlMapFactory();
+        return new RedirectFactory();
     }
 }
