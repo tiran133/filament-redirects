@@ -1,12 +1,12 @@
 {
-    "name": "codedor/filament-url-mapper",
+    "name": "codedor/filament-redirects",
     "description": "This package allows you to add redirects via Filament manually or with an import",
     "keywords": [
         "codedor",
         "laravel",
-        "filament-url-mapper"
+        "filament-redirects"
     ],
-    "homepage": "https://github.com/codedor/filament-url-mapper",
+    "homepage": "https://github.com/codedor/filament-redirects",
     "license": "MIT",
     "require": {
         "php": "^8.2",
@@ -26,19 +26,19 @@
     },
     "autoload": {
         "psr-4": {
-            "Codedor\\FilamentUrlMapper\\": "src",
-            "Codedor\\FilamentUrlMapper\\Database\\Factories\\": "database/factories"
+            "Codedor\\FilamentRedirects\\": "src",
+            "Codedor\\FilamentRedirects\\Database\\Factories\\": "database/factories"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Codedor\\FilamentUrlMapper\\Tests\\": "tests"
+            "Codedor\\FilamentRedirects\\Tests\\": "tests"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Codedor\\FilamentUrlMapper\\Providers\\FilamentUrlMapperServiceProvider"
+                "Codedor\\FilamentRedirects\\Providers\\FilamentRedirectsServiceProvider"
             ]
         }
     },

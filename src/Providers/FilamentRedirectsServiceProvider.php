@@ -1,18 +1,18 @@
 <?php
 
-namespace Codedor\FilamentUrlMapper\Providers;
+namespace Codedor\FilamentRedirects\Providers;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
-class FilamentUrlMapperServiceProvider extends PackageServiceProvider
+class FilamentRedirectsServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {
         $package
-            ->name('filament-url-mapper')
+            ->name('filament-redirects')
             ->setBasePath(__DIR__ . '/../')
             ->hasConfigFile()
-            ->hasMigration('create_package_table');
+            ->hasMigration('create_redirects_table');
     }
 }

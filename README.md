@@ -1,28 +1,26 @@
-# This package allows you to add redirects via Filament manually or with an import
+# Redirects package for Filament and Laravel
 
-## 
-
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
+This package allows you to add redirects via Filament manually or with an import
 
 ## Installation
 
 You can install the package via composer:
 
 ```bash
-composer require codedor/filament-url-mapper
+composer require codedor/filament-redirects
 ```
 
 You can publish and run the migrations with:
 
 ```bash
-php artisan vendor:publish --tag="filament-url-mapper-migrations"
+php artisan vendor:publish --tag="filament-redirects-migrations"
 php artisan migrate
 ```
 
 You can publish the config file with:
 
 ```bash
-php artisan vendor:publish --tag="filament-url-mapper-config"
+php artisan vendor:publish --tag="filament-redirects-config"
 ```
 
 This is the contents of the published config file:
@@ -35,14 +33,12 @@ return [
 Optionally, you can publish the views using
 
 ```bash
-php artisan vendor:publish --tag="filament-url-mapper-views"
+php artisan vendor:publish --tag="filament-redirects-views"
 ```
 
 ## Usage
 
 ```php
-$filamentUrlMapper = new Codedor\FilamentUrlMapper();
-echo $filamentUrlMapper->echoPhrase('Hello, Codedor!');
 ```
 
 ## Documentation
