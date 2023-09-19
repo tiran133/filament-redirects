@@ -50,7 +50,7 @@ class Redirects
         }
 
         if ($activeRedirect->pass_query_string) {
-            $to = $activeRedirect->to . '?' . Str::afterLast($request->getUri(), '?');
+            $to = $activeRedirect->to . '?' . $request->getQueryString();
         } else {
             $to = $activeRedirect->to;
         }
