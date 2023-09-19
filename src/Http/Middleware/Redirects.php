@@ -35,11 +35,10 @@ class Redirects
                 config('url-mapping.route-wildcard', '*')
             );
 
-            return (
+            return
                 ($hasWildcard && Str::is($redirect->clean_from, $current['path'])) ||
                 ($hasWildcard && Str::is($redirect->clean_from, $current['full'])) ||
-                (in_array($redirect->clean_from, $current))
-            );
+                (in_array($redirect->clean_from, $current));
         });
 
         if (! $activeRedirect) {
