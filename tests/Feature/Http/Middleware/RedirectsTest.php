@@ -1,6 +1,5 @@
 <?php
 
-
 use Codedor\FilamentRedirects\Models\Redirect;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 
@@ -120,7 +119,6 @@ it('will redirect with a wildcard', function () {
         'pass_query_string' => false,
         'online' => true,
     ]);
-
 
     $response = createResponse('/from');
 

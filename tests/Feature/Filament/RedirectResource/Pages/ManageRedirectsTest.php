@@ -3,10 +3,7 @@
 use Codedor\FilamentRedirects\Filament\RedirectResource\Pages\ManageRedirects;
 use Codedor\FilamentRedirects\Models\Redirect;
 use Filament\Notifications\Notification;
-use Illuminate\Support\Facades\Queue;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Str;
-use Mockery\MockInterface;
 
 use function Pest\Livewire\livewire;
 
@@ -90,7 +87,7 @@ it('can create a redirect', function () {
         ->callAction('create', [
             'from' => '/from',
             'to' => '/to',
-            'status' => 410
+            'status' => 410,
         ])
         ->assertHasNoActionErrors();
 

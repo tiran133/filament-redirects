@@ -14,5 +14,6 @@ function createResponse(string $uri, string $method = 'GET')
 
     $middleware = new Redirects();
 
-    return $middleware->handle($request, function () {});
+    return $middleware->handle($request, function () {
+    });
 }

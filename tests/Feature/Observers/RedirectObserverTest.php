@@ -4,10 +4,10 @@ use Illuminate\Support\Facades\Cache;
 
 it('clears cache when creating a redirect', function () {
     Cache::shouldReceive('forget')
-       ->with('redirects')
+        ->with('redirects')
         ->once();
 
-   \Codedor\FilamentRedirects\Models\Redirect::factory()->create();
+    \Codedor\FilamentRedirects\Models\Redirect::factory()->create();
 });
 
 it('clears cache when updating a redirect', function () {
