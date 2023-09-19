@@ -2,9 +2,9 @@
 
 namespace Codedor\FilamentUrlMapper\Tests;
 
+use Codedor\FilamentUrlMapper\Providers\FilamentUrlMapperServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Codedor\FilamentUrlMapper\Providers\FilamentUrlMapperServiceProvider;
 
 class TestCase extends Orchestra
 {
