@@ -5,14 +5,11 @@ namespace Codedor\FilamentRedirects\Imports;
 use Codedor\FilamentRedirects\Models\Redirect;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
-use Maatwebsite\Excel\Concerns\SkipsUnknownSheets;
 use Maatwebsite\Excel\Concerns\ToCollection;
 use Maatwebsite\Excel\Concerns\WithBatchInserts;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
-use Maatwebsite\Excel\Concerns\WithMultipleSheets;
-use Maatwebsite\Excel\Imports\HeadingRowFormatter;
 
-class RedirectsImport implements ToCollection, WithHeadingRow, WithBatchInserts
+class RedirectsImport implements ToCollection, WithBatchInserts, WithHeadingRow
 {
     private int $defaultStatus;
 
