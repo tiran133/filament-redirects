@@ -4,9 +4,6 @@ namespace Codedor\FilamentRedirects\Filament;
 
 use Filament\Contracts\Plugin;
 use Filament\Panel;
-use Filament\Support\Assets\Css;
-use Filament\Support\Assets\Js;
-use Filament\Support\Facades\FilamentAsset;
 
 class RedirectsPlugin implements Plugin
 {

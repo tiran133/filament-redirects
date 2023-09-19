@@ -10,8 +10,8 @@ use Spatie\EloquentSortable\SortableTrait;
 
 class Redirect extends Model implements Sortable
 {
-    use SortableTrait;
     use HasFactory;
+    use SortableTrait;
 
     protected $fillable = [
         'sort_order',
@@ -42,7 +42,7 @@ class Redirect extends Model implements Sortable
             Str::startsWith($this->from, '/') || Str::startsWith($this->from, 'http')
                 ? ''
                 : '/'
-            ) . $this->from;
+        ) . $this->from;
     }
 
     /**
