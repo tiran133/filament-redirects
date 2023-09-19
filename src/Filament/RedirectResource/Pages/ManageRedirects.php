@@ -6,7 +6,6 @@ use Codedor\FilamentRedirects\Filament\RedirectResource;
 use Codedor\FilamentRedirects\Imports\RedirectsImport;
 use Filament\Actions;
 use Filament\Actions\Action;
-use Filament\Forms\Components\Checkbox;
 use Filament\Forms\Components\FileUpload;
 use Filament\Notifications\Notification;
 use Filament\Resources\Pages\ManageRecords;
