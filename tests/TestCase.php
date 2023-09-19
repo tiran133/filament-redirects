@@ -2,9 +2,9 @@
 
 namespace Codedor\FilamentRedirects\Tests;
 
+use Codedor\FilamentRedirects\Providers\FilamentRedirectsServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Codedor\FilamentRedirects\Providers\FilamentRedirectsServiceProvider;
 
 class TestCase extends Orchestra
 {
