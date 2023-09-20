@@ -27,18 +27,9 @@ This is the contents of the published config file:
 
 ```php
 return [
+    'route-wildcard' => '*',
+    'default-status' => 302,
 ];
-```
-
-Optionally, you can publish the views using
-
-```bash
-php artisan vendor:publish --tag="filament-redirects-views"
-```
-
-## Usage
-
-```php
 ```
 
 ## Documentation

@@ -32,7 +32,7 @@ class Redirects
         $activeRedirect = $urlMaps->first(function ($redirect) use ($current) {
             $hasWildcard = Str::contains(
                 $redirect->clean_from,
-                config('url-mapping.route-wildcard', '*')
+                config('filament-redirects.route-wildcard', '*')
             );
 
             return
