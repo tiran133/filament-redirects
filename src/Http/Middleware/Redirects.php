@@ -49,7 +49,7 @@ class Redirects
             return abort(410);
         }
 
-        if ($activeRedirect->pass_query_string) {
+        if ($activeRedirect->pass_query_string && $request->getQueryString()) {
             $to = $activeRedirect->to . '?' . $request->getQueryString();
         } else {
             $to = $activeRedirect->to;
