@@ -22,11 +22,14 @@ class Redirects
                 ->get();
         });
 
+        $uri = urldecode($request->getUri());
+        $requestUri = urldecode($request->getRequestUri());
+
         $current = [
-            'full' => $request->getUri(),
-            'fullNoQuery' => Str::beforeLast($request->getUri(), '?'),
-            'path' => $request->getRequestUri(),
-            'pathNoQuery' => Str::beforeLast($request->getRequestUri(), '?'),
+            'full' => $uri,
+            'fullNoQuery' => Str::beforeLast($uri, '?'),
+            'path' => $requestUri,
+            'pathNoQuery' => Str::beforeLast($requestUri, '?'),
         ];
 
         $activeRedirect = $urlMaps->first(function ($redirect) use ($current) {
