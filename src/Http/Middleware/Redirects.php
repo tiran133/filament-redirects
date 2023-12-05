@@ -22,8 +22,13 @@ class Redirects
                 ->get();
         });
 
+        // Decode urls
         $uri = urldecode($request->getUri());
         $requestUri = urldecode($request->getRequestUri());
+
+        // Convert to ascii (for special characters)
+        $uri = Str::ascii($uri);
+        $requestUri = Str::ascii($requestUri);
 
         $current = [
             'full' => $uri,
