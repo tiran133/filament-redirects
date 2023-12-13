@@ -48,11 +48,17 @@ class Redirect extends Model implements Sortable
 
     public function getCleanFromAttribute()
     {
-        return trim((
-            Str::startsWith($this->from, '/') || Str::startsWith($this->from, 'http')
-                ? ''
-                : '/'
-        ) . $this->from);
+        return Str::ascii(
+            urldecode(
+                trim(
+                    (
+                        Str::startsWith($this->from, '/') || Str::startsWith($this->from, 'http')
+                            ? ''
+                            : '/'
+                    ) . $this->from
+                )
+            )
+        );
     }
 
     /**

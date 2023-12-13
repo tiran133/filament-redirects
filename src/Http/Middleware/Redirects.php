@@ -38,15 +38,14 @@ class Redirects
         ];
 
         $activeRedirect = $urlMaps->first(function ($redirect) use ($current) {
-            $hasWildcard = Str::contains(
-                $redirect->clean_from,
-                config('filament-redirects.route-wildcard', '*')
-            );
+            $from = $redirect->clean_from;
+
+            $hasWildcard = Str::contains($from, config('filament-redirects.route-wildcard', '*'));
 
             return
-                ($hasWildcard && Str::is($redirect->clean_from, $current['path'])) ||
-                ($hasWildcard && Str::is($redirect->clean_from, $current['full'])) ||
-                (in_array($redirect->clean_from, $current));
+                ($hasWildcard && Str::is($from, $current['path'])) ||
+                ($hasWildcard && Str::is($from, $current['full'])) ||
+                (in_array($from, $current));
         });
 
         if (! $activeRedirect) {
