@@ -48,7 +48,7 @@ class Redirects
                 (in_array($from, $current));
         });
 
-        if (! $activeRedirect) {
+        if (! $activeRedirect || $activeRedirect->clean_from === $activeRedirect->to) {
             return $next($request);
         }
 
