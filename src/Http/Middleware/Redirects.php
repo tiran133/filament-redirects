@@ -34,6 +34,7 @@ class Redirects
             'full' => $uri,
             'fullNoQuery' => Str::beforeLast($uri, '?'),
             'fullWithTrailingSlash' => Str::finish($uri, '/'),
+            'fullWithoutTrailingSlash' => Str::replaceEnd($uri, '/'),
             'path' => $requestUri,
             'pathNoQuery' => Str::beforeLast($requestUri, '?'),
         ];
