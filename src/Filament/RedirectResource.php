@@ -9,6 +9,7 @@ use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Support\Str;
 
 class RedirectResource extends Resource
 {
@@ -50,9 +51,11 @@ class RedirectResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('from')
-                    ->searchable(),
+                    ->searchable()
+                    ->url(fn ($record) => Str::replace('*', '', $record->from), true),
                 Tables\Columns\TextColumn::make('to')
-                    ->searchable(),
+                    ->searchable()
+                    ->url(fn ($record) => Str::replace('*', '', $record->to), true),
                 Tables\Columns\TextColumn::make('status'),
             ])
             ->filters([
